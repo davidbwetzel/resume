@@ -14,12 +14,12 @@ var formattedName = "David B. Wetzel, DMA";
 
 var formattedRole = "Musician, Educator, Web & Interactive Software Developer";
 
-HTMLheaderName = HTMLheaderName.replace("%data%", formattedName);
-HTMLheaderRole = HTMLheaderRole.replace("%data%", formattedRole);
+formattedName = HTMLheaderName.replace("%data%", formattedName);
+formattedRole = HTMLheaderRole.replace("%data%", formattedRole);
 
-$("#header").append(HTMLheaderName);
+$("#header").prepend(formattedName);
 
-$("#header").append(HTMLheaderRole);
+$("#header").prepend(formattedRole);
 
 
 
