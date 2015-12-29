@@ -17,9 +17,9 @@ var formattedRole = "Musician, Educator, Web & Interactive Software Developer";
 formattedName = HTMLheaderName.replace("%data%", formattedName);
 formattedRole = HTMLheaderRole.replace("%data%", formattedRole);
 
-$("#header").prepend(formattedName);
-
 $("#header").prepend(formattedRole);
+
+$("#header").prepend(formattedName);
 
 
 
