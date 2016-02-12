@@ -1,4 +1,3 @@
-
 /*
 if(bio.skills.length > 0)
 {
@@ -18,17 +17,17 @@ if(bio.skills.length > 0)
 */
 function displayWork()
 {
-	for (var job in work.positions)
+	for (var job in resume.work.jobs)
 	{
 		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.positions[job].employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.positions[job].jobtitle);
-		var formattedLocation = HTMLworkLocation.replace("%data%", work.positions[job].location);
-		var formattedDates = HTMLworkDates.replace("%data%", work.positions[job].dates);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", resume.work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", resume.work.jobs[job].title);
+		var formattedLocation = HTMLworkLocation.replace("%data%", resume.work.jobs[job].location);
+		var formattedDates = HTMLworkDates.replace("%data%", resume.work.jobs[job].dates);
 		var formattedDuties = " ";
-		for (var i = 0; i < work.positions[job].duties.length; i++)
+		for (var duty in resume.work.jobs[job].duties)
 		{
-			var duty = HTMLworkDescription.replace("%data%", work.positions[job].duties[i]);
+			var duty = HTMLworkDescription.replace("%data%", resume.work.jobs[job].duties[duty]);
 			formattedDuties = formattedDuties.concat(duty);
 		}
 		
@@ -40,6 +39,21 @@ function displayWork()
 }
 
 displayWork();
+
+projects.display = function(){
+	for (var proj in projects.personal)
+	{
+		$("#projects").append(HTMLprojectStart);
+		var formattedProject = HTMLprojectTitle.replace("%data%", projects.personal[proj].title);
+		
+		$(".project-entry:last").append(formattedProject);
+	}
+}
+
+projects.display();
+
+// add the map to the mapDiv id
+// $("#mapDiv").append(googleMap);
 
 $(document).click(function(loc){
 	// find x,y click locations and log them to console
