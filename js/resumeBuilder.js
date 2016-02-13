@@ -21,20 +21,16 @@ function displayWork()
 	{
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", resume.work.jobs[job].employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", resume.work.jobs[job].title);
 		var formattedLocation = HTMLworkLocation.replace("%data%", resume.work.jobs[job].location);
-		var formattedDates = HTMLworkDates.replace("%data%", resume.work.jobs[job].dates);
-		var formattedDuties = " ";
-		for (var duty in resume.work.jobs[job].duties)
+		$(".work-entry:last").append(formattedEmployer + formattedLocation);
+		
+		for(var position in resume.work.jobs[job].positions)
 		{
-			var duty = HTMLworkDescription.replace("%data%", resume.work.jobs[job].duties[duty]);
-			formattedDuties = formattedDuties.concat(duty);
-		}
-		
-		var formattedJob = formattedEmployer + formattedLocation + formattedTitle + formattedDates + formattedDuties;
-		
-		$(".work-entry:last").append(formattedJob);
-
+			var formattedTitle = HTMLworkTitle.replace("%data%", resume.work.jobs[job].positions[position].title);	
+			var formattedDates = HTMLworkDates.replace("%data%", resume.work.jobs[job].positions[position].dates);
+			var formattedDuties = HTMLworkDescription.replace("%data%", resume.work.jobs[job].positions[position].duties);
+			$(".work-entry:last").append(formattedDates + formattedTitle + formattedDuties);			
+		}	
 	}
 }
 
@@ -75,4 +71,4 @@ function inName(name)
 
 console.log(inName("david wetzel"));
 
-$("#main").append(internationalizeButton);
+//$("#main").append(internationalizeButton);

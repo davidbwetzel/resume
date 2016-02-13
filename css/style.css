@@ -26,6 +26,7 @@ h2 {
   color: #999999;
   line-height: 29px;
   padding: 10px;
+  clear : both;
 }
 
 h3 {
@@ -48,13 +49,13 @@ h2, h3, h4, h5 {
   padding-right: 5%;
 }
 
-
-.date-text {
+.employer-text {
   font-style: italic;
-  font-size: 14px;
-  color: #999999;
-  line-height: 16px;
-  float: left;
+  font-size: 20px;
+  color: #7777aa;
+  line-height: 30px;
+  clear : both;
+  float : left;
 }
 
 .location-text {
@@ -63,7 +64,34 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: right;
+}
 
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  clear : both;
+  float : left;
+}
+
+.title-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  float: left;
+}
+
+.duties-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  padding-left : 20px;
+  padding-bottom : 10px;
+  clear : both;
+  float: left;
 }
 
 p {
@@ -106,7 +134,7 @@ a {
 
 .gray {
   background-color: #F3F3F3;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   clear:both;
 }
 

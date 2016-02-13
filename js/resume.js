@@ -110,9 +110,18 @@ var resume = {
 		[
 			{
 				"employer" : "Educational Testing Service (ETS)",
-				"location" : "Chciago, IL",
-				"title" : [
-					"test rater"
+				"location" : "Chicago, IL",
+				"positions" : [
+						{
+						"title" : "test rater",
+						"duties" : "Score standardized test responses according to established rubrics and policies for K-12 math and for TOEFL and TOEIC speaking exams",
+						"areas" : [
+							"CAASSP", 
+							"TOEFL Speaking", 
+							"TOEIC Speaking"
+							],
+						"dates" : "2015 - present "
+						}
 					],
 				"areas" : [
 					"CAASSP", 
@@ -132,144 +141,146 @@ var resume = {
 				"employer" : "Mansfield University of Pennsylvania",
 				"parent" : "Pennsylvania State System of Higher Education (PASSHE)",
 				"location" : "Mansfield, PA",
-				"title" : [
-					"associate professor of music"
-					],
-				"department" : "music",
-				"distinctions" : [
-					"tenure (2009)",
-					"promotion in rank (2010)",
-					"outstanding senior mentor (2014)"
-					],
-				"areas" : [
-					"clarinet", 
-					"music technology", 
-					"general music"
-					],
-				"duties" : [
-					"Taught courses and lessons in applied clarinet, music technology, music business, and general music; advised undergraduate students majoring in music with concentrations in technology and business; coordinated music technology and business degree programs; maintained and developed music recording, production, and lab facilities; served on departmental and university committees; performed at local, national, and international venues, festivals, and conferences; contributed new scholarly research to leading publications and professional societies in my field; "
-					],
-				"courses" : [
-					"MAP 3332/4432/5532 Applied Clarinet", 
-					"MEN 3333 Clarinet Ensemble", 
-					"MAP 1135 Woodwinds", 
-					"MEN 2255 MU Laptop Ensemble (MULE)", 
-					"MU 1101 Introduction to Music",
-					"MU 1105 Introduction to Music Technology",
-					"MU 2255 Live Sound",
-					"MU 3313/5513 Electronic Music",
-					"MU 3314 Computer-Based Music Notation",
-					"MU 4413 Studio Production Techniques",
-					"MU 4414 Recording Arts",
-					"MU 4481 Survey of Music Business",
-					"MU 4489 Music Industry Internship"
-					],
-				"committees" : [
-					"Music technology (chair)",
-					"Music professional",
-					"Woodwinds",
-					"Academic Planning (chair 2009-11)"
-					],
+				"positions" : [
+					{
+					"title" : "associate professor of music",
+					"department" : "department of music",
+					"distinctions" : [
+						"tenure (2009)",
+						"promotion in rank (2010)",
+						"outstanding senior mentor (2014)"
+						],
+					"areas" : [
+						"clarinet", 
+						"music technology", 
+						"general music"
+						],
+					"duties" : "Taught courses and lessons in applied clarinet, music technology, music business, and general music; advised undergraduate students majoring in music with concentrations in technology and business; coordinated music technology and business degree programs; maintained and developed music recording, production, and lab facilities; served on departmental and university committees; performed at local, national, and international venues, festivals, and conferences; contributed new scholarly research to leading publications and professional societies in my field ",
+					"courses" : [
+						"MAP 3332/4432/5532 Applied Clarinet", 
+						"MEN 3333 Clarinet Ensemble", 
+						"MAP 1135 Woodwinds", 
+						"MEN 2255 MU Laptop Ensemble (MULE)", 
+						"MU 1101 Introduction to Music",
+						"MU 1105 Introduction to Music Technology",
+						"MU 2255 Live Sound",
+						"MU 3313/5513 Electronic Music",
+						"MU 3314 Computer-Based Music Notation",
+						"MU 4413 Studio Production Techniques",
+						"MU 4414 Recording Arts",
+						"MU 4481 Survey of Music Business",
+						"MU 4489 Music Industry Internship"
+						],
+					"committees" : [
+						"Music technology (chair)",
+						"Music professional",
+						"Woodwinds",
+						"Academic Planning (chair 2009-11)"
+						],
+					"dates" : "2004 - 2014"
+					}
+				],
 				"current" : false,
-				"start" : "August 2004",
-				"end" : "August 2014",
 				"dates" : "2004 - 2014",
 				"years" : 10
 			},
 			{
 				"employer" : "Central Arizona College",
 				"location" : "Coolidge, AZ",
-				"title" : [
-					"adjunct professor of music and multimedia", 
-					"education technologist"
-					],
-				"department" : [
-					"music department", 
-					"teacher education division"
-					],
-				"duties" : [
-					"Taught courses in music appreciation and music technology", 
-					"Provided educational technology support and services to college faculty and to area K-12 teachers; managed multimedia labs, department web site, and special events"
-					],
+				"positions" : [
+					{
+						"title" : "adjunct professor of music and multimedia",
+						"department" : "music department",
+						"duties" : "taught courses in music appreciation and music technology",
+						"courses" :  [
+							"MHL100 Music Appreciation", 
+							"MUT100 Music Technology", 
+							"EDU200 Multimedia in Education"
+							],
+						"dates" : "2000 - 2004"
+					},
+					{
+						"title" : "education technologist",
+						"department" : "teacher education division",
+						"duties" : "Provided educational technology support and services to college faculty and to area K-12 teachers; managed multimedia labs, department web site, and special events",
+						"dates" : "2001 - 2002"
+					}
+				],
 				"courses" : [
 					"MHL100 Music Appreciation", 
 					"MUT100 Music Technology", 
 					"EDU200 Multimedia in Education"
 					],
 				"current" : false,
-				"start" : "August 2000",
-				"end" : "August 2004",
-				"dates" : [
-					"2000 - 2004",
-					"2001 - 2002"
-					],
+				"dates" : "2000 - 2004",
 				"years" : 4			
 			},
 			{
 				"employer" : "ITT Technical Institute",
 				"location" : "Phoenix, AZ",
-				"title" : [
-					"adjunct instructor of multimedia"
-					],
-				"duties" : [
-					"taught courses in video editing and interactive animation"
-					],
-				"courses" : [
-					"CVT 530 Multimedia Processes",
-					"CVT 560 Advanced Multimedia Design"
-					],
+				"positions" : [
+					{
+					"title" : "adjunct instructor of multimedia",
+					"duties" : "taught courses in video editing and interactive animation",
+					"courses" : [
+						"CVT 530 Multimedia Processes",
+						"CVT 560 Advanced Multimedia Design"
+						],
+					"dates" : "2000 - 2001"
+					}
+				],
 				"current" : false,
-				"start" : "October 2000",
-				"end" : "March 2001",
-				"dates" : ["2000 - 2001"],
+				"dates" : "2000 - 2001",
 				"years" : 0.5
 			},
 			{
 				"employer" : "Soundprint Media Center",
 				"location" : "Laurel, MD",
-				"title" : [
-					"sound engineer"
-					],
-				"duties" : [
-					"edited and mixed weekly documentary series for NPR distribution"
-					],
+				"positions" : [
+					{
+					"title" : "sound engineer",
+					"duties" : "edited and mixed weekly documentary series for NPR distribution",
+					"dates" : "2000"
+					}
+				],
 				"current" : false,
-				"start" : "January 2000",
-				"end" : "May 2000",
-				"dates" : ["2000"],
+				"dates" : "2000",
 				"years" : 0.5
 			},
 			{
 				"employer" : "Peabody Institute",
 				"parent" : "The Johns Hopkins University",
 				"location" : "Baltimore, MD",
-				"department" : [
-					"office of technology transfer",
-					"preparatory division",
-					"conservatory of music",
-					"conservatory of music"
-					],
-				"title" : [
-					"technical team member",
-					"instructor of computer music",
-					"ensemble assistant",
-					"graduate assistant in computer music"
-					],
-				"duties" : [
-					"contributed interactive systems design and programming, logistical planning, and event coordination to live performances at 'Times Square 2000' New Year's Eve celebrations in New York City",
-					"taught courses and private lessons in computer music and music technology",
-					"managed five student ensembles; music librarian; generally assisted with conservatory concert operations",
-					"computer music studio maintenance; guest artist and concert coordination; IT help desk" 
-					],
+				"positions" : [
+					{
+						"department" : "office of technology transfer",
+						"title" : "technical team member",
+						"duties" : "contributed interactive systems design and programming, logistical planning, and event coordination to live performances at 'Times Square 2000' New Year's Eve celebrations in New York City",
+						"dates" : "1999 - 2000"
+					},
+					{
+						"department" : "preparatory division",
+						"title" : "instructor of computer music",
+						"duties" : "taught courses and private lessons in computer music and music technology",
+						"dates" : "1997 - 2000"
+					},
+					{
+						"department" : "conservatory of music",
+						"title" : "ensemble assistant",
+						"duties" : "managed five student ensembles; music librarian; generally assisted with conservatory concert operations",
+						"dates" : "1996 - 1999"
+					},
+					{
+						"department" : "conservatory of music",
+						"title" : "graduate assistant in computer music",
+						"duties" : "computer music studio maintenance; guest artist and concert coordination; IT help desk",
+						"dates" : "1995 - 1996"
+					}
+				],
 				"current" : false,
 				"start" : "January 1995",
 				"end" : "May 2000",
-				"dates" : [
-					"1999 - 2000",
-					"1997 - 2000",
-					"1996 - 1999",
-					"1995 - 1996"
-					],
+				"dates" : "1995 - 2000 ",
 				"years" : 5.5
 			}
 		]
