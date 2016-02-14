@@ -50,16 +50,16 @@ h2, h3, h4, h5 {
 }
 
 .employer-text {
-  font-style: italic;
-  font-size: 20px;
+  font-style: normal;
+  font-size: 16px;
   color: #7777aa;
-  line-height: 30px;
+  line-height: 24px;
   clear : both;
   float : left;
 }
 
 .location-text {
-  font-style: italic;
+  font-style: normal;
   font-size: 14px;
   color: #999999;
   line-height: 16px;
@@ -67,7 +67,7 @@ h2, h3, h4, h5 {
 }
 
 .date-text {
-  font-style: italic;
+  font-style: bold;
   font-size: 14px;
   color: #999999;
   line-height: 16px;
@@ -76,16 +76,25 @@ h2, h3, h4, h5 {
 }
 
 .title-text {
-  font-style: italic;
+  font-style: bold;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  padding-left: 5px;
+  float: left;
+}
+
+.dept-text {
+  font-style: bold;
   font-size: 14px;
   color: #999999;
   line-height: 16px;
   float: left;
+  padding-left: 5px;
 }
-
 .duties-text {
   font-style: italic;
-  font-size: 14px;
+  font-size: 12px;
   color: #999999;
   line-height: 16px;
   padding-left : 20px;

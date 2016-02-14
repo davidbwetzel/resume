@@ -292,8 +292,9 @@ var resume = {
 				"name" : "Udacity",
 				"program" : "Nanodegree",
 				"subject" : "Front End Web Developer",
+				"location" : "Online",
 				"level" : "continuing education",
-				"year" : "2016",
+				"year" : "2016 (in progress)",
 				"attended" : "2015 - 2016",
 				"coursework" : [
 					"Intro to HTML and CSS", 
@@ -343,7 +344,7 @@ var resume = {
 				]
 			}, 
 			{
-				"name" : "Lawrence Conservatory of Music",
+				"name" : "Conservatory of Music",
 				"institution" : "Lawrence University",
 				"location" : "Appleton, WI",
 				"degree" : "Bachelor of Music",
