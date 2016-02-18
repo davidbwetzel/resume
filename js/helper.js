@@ -38,19 +38,20 @@ var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<div class="duties-text">%data%</div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+//var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<div class="employer-text">%data%</div>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
-var HTMLedLevelStart = '<h3>%data%</h3>';
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLedLevelStart = '<div class="edLevel-text">%data%</div>';
+var HTMLschoolName = '<div class="employer-text">%data%</div>';
+var HTMLschoolDegree = '<div class="title-text"> - %data%</div>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
-var HTMLschoolSubject = '<em><br>%data%</em>';
+var HTMLschoolMajor = '<div class="duties-text">Major: %data%</div>';
+var HTMLschoolSubject = '<div class="duties-text">%data%</div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';

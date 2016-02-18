@@ -9,7 +9,7 @@
 }
 
 .education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
+  padding-left: 6%;
   padding-right: 5%;
 }
 
@@ -58,6 +58,16 @@ h2, h3, h4, h5 {
   float : left;
 }
 
+.edLevel-text {
+  font-style: normal;
+  font-size: 16px;
+  color: #7777aa;
+  line-height: 24px;
+  clear : both;
+  padding-top: 10px;
+  padding-left : 5%;
+}
+
 .location-text {
   font-style: normal;
   font-size: 14px;
@@ -99,8 +109,9 @@ h2, h3, h4, h5 {
   line-height: 16px;
   padding-left : 20px;
   padding-bottom : 10px;
-  clear : both;
   float: left;
+  clear : both;
+
 }
 
 p {
@@ -149,6 +160,7 @@ a {
 
 .dark-gray {
   background-color: #4A4A4A;
+  clear: both;
 }
 
 /* TODO: Replace with image later */
@@ -161,7 +173,7 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-around; 
   padding: 10px;
 }
 

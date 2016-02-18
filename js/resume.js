@@ -155,7 +155,7 @@ var resume = {
 						"music technology", 
 						"general music"
 						],
-					"duties" : "Taught courses and lessons in applied clarinet, music technology, music business, and general music; advised undergraduate students majoring in music with concentrations in technology and business; coordinated music technology and business degree programs; maintained and developed music recording, production, and lab facilities; served on departmental and university committees; performed at local, national, and international venues, festivals, and conferences; contributed new scholarly research to leading publications and professional societies in my field ",
+					"duties" : "Taught courses and lessons in applied clarinet, music technology, music business, and general music; advised undergraduate students majoring in music with concentrations in technology and business; designed curriculum and coordinated music technology and business programs; developed and maintained music recording, production, and lab facilities; served on departmental and university committees; performed at local, national, and international venues, festivals, and conferences; contributed new scholarly research to leading publications and professional societies in my field ",
 					"courses" : [
 						"MAP 3332/4432/5532 Applied Clarinet", 
 						"MEN 3333 Clarinet Ensemble", 

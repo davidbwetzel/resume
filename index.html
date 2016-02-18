@@ -19,7 +19,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <meta charset="utf-8">
 
   <!-- Tells the browser what the title of this page should be. -->
-  <title>Resume</title>
+  <title>Resume: David B Wetzel</title>
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -42,11 +42,12 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
 
+  <!-- resume data is stored as JSON object literal in this file-->
   <script src="js/resume.js"></script>
   
+  <!-- Google maps API for showing interactive map -->
   <script src="http://maps.googleapis.com/maps/api/js"></script>
   
-
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
@@ -67,11 +68,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <ul id="topContacts" class='flex-box'></ul>
     </div>
     <div style='clear: both;'></div>
+    <div id="projects" class='gray'>
+      <h2>Recent Projects</h2>
+    </div>
     <div id="workExperience" class='gray'>
       <h2>Work Experience</h2>
-    </div>
-    <div id="projects">
-      <h2>Projects</h2>
     </div>
     <div id="education" class='gray'>
       <h2>Education</h2>
@@ -81,9 +82,10 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
     <div id="letsConnect" class='dark-gray'>
       <h2 class='orange center-text'>Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
+        <ul id="footerContacts" class="flex-box"> 
       </ul>
     </div>
+
   </div>
 
   <!--

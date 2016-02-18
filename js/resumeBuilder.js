@@ -1,18 +1,30 @@
-
+/*
 if(resume.bio.skills.length > 0)
 {
 	$("#header").prepend(HTMLskillsStart);
-	console.log(HTMLskillsStart);
-	
-	var formattedSkill = HTMLskills.replace("%data%", resume.bio.skills[0]);
-//	$("#skills").append(formattedSkill);
 
 	for (var i = 0; i < resume.bio.skills.length; i++)
 	{
-		formattedSkill = HTMLskills.replace("%data%", resume.bio.skills[i]);
+		var formattedSkill = HTMLskills.replace("%data%", resume.bio.skills[i]);
 		$("#skills").append(formattedSkill);
 	}
 	
+}
+*/
+function displayHeader()
+{
+	var formattedName = HTMLheaderName.replace("%data%", resume.bio.name);
+	$("#header").append(formattedName);
+	
+	if(resume.bio.skills.length > 0)
+	{
+		$("#header").append(HTMLskillsStart);
+		for (var skill in resume.bio.skills)
+		{
+			var formattedSkill = HTMLskills.replace("%data%", resume.bio.skills[skill]);
+			$("#skills").append(formattedSkill);
+		}	
+	}
 }
 
 function displayWork()
@@ -41,11 +53,11 @@ function displayWork()
 
 function displayEducation()
 {
-	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Continuing education: ");
-	$("#education").append(formattedEdLevel);
+//	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Continuing education: ");
+//	$("#education").append(formattedEdLevel);
 	for (var program in resume.education.CEU) //cycle through each Continuing Ed program
 	{
-		$("#education").append(HTMLschoolStart);
+		$("#education").append(HTMLschoolStart); //'<div class="education-entry"></div>'
 		var formattedSchool = HTMLschoolName.replace("%data%", resume.education.CEU[program].name);
 		var formattedLocation = HTMLschoolLocation.replace("%data%", resume.education.CEU[program].location);
 		$(".education-entry:last").append(formattedSchool + formattedLocation);					
@@ -55,6 +67,9 @@ function displayEducation()
 		$(".education-entry:last").append(formattedDates + formattedDegree + formattedSubject);			
 		
 	}
+
+//	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Degrees:");
+//	$("#education").append(formattedEdLevel);	
 	for (var school in resume.education.UNI) //cycle through each University listed
 	{
 		$("#education").append(HTMLschoolStart);
@@ -68,7 +83,8 @@ function displayEducation()
 	}
 }
 
-resume.projects.display = function(){
+function displayProjects()
+{
 	for (var proj in resume.projects.personal)
 	{
 		$("#projects").append(HTMLprojectStart);
@@ -78,13 +94,16 @@ resume.projects.display = function(){
 	}
 }
 
+displayHeader();
 displayWork();
 displayEducation();
-resume.projects.display();
+//resume.projects.display();
+displayProjects();
 
 // add the map to the mapDiv id
 // $("#mapDiv").append(googleMap);
 
+/*
 $(document).click(function(loc){
 	// find x,y click locations and log them to console
 	var x = loc.pageX;
@@ -92,7 +111,8 @@ $(document).click(function(loc){
 
 	logClicks(x,y);
 });
-
+*/
+/*
 function inName(name)
 {
 	name = name.trim().split(" ");
@@ -104,5 +124,5 @@ function inName(name)
 }
 
 console.log(inName("david wetzel"));
-
+*/
 //$("#main").append(internationalizeButton);
