@@ -85,6 +85,21 @@ h2, h3, h4, h5 {
   float : left;
 }
 
+.bullet {
+  padding: 0px;
+  padding-right: 5px;
+  height: 10px;
+}
+
+.more {
+  font-style: bold;
+  font-size: 10px;
+  color: #999999;
+  line-height: 16px;
+  padding-left: 10px;
+  float : left;
+}
+
 .title-text {
   font-style: bold;
   font-size: 14px;
@@ -111,6 +126,7 @@ h2, h3, h4, h5 {
   padding-bottom : 10px;
   float: left;
   clear : both;
+  display: none;
 
 }
 

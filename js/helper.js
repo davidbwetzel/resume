@@ -26,7 +26,7 @@ var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</sp
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
+var HTMLskillsStart = '<h3 id="skillsH3">Skills:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
@@ -35,7 +35,9 @@ var HTMLworkTitle = '<div class="title-text"> - %data%</div>';
 var HTMLworkDept = '<div class="dept-text"> (%data%)</div>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<div class="duties-text">%data%</div>';
+var HTMLworkDescription = '<div class="duties-text" id="%id%">%data%</div>';
+// add a bit of text that will show/hide the description text
+//var HTMLshowHide = 'onclick = 
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 //var HTMLprojectTitle = '<a href="#">%data%</a>';

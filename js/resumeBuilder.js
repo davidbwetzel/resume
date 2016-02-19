@@ -37,17 +37,51 @@ function displayWork()
 		$(".work-entry:last").append(formattedEmployer + formattedLocation);
 		
 		for(var position in resume.work.jobs[job].positions)
-		{
+		{			
+			var positionNumber = job + "." + position;
+			var HTMLposition = "<div class='position' onclick='showHide(\"duties%posNum%\", \"workBullet%posNum%\");'> %data% </div>";
+			HTMLposition = HTMLposition.replace("%posNum%", positionNumber);
+			HTMLposition = HTMLposition.replace("%posNum%", positionNumber);
+
+//			var bullet = "<div class='more' id='%id%'> (show more ...) </div>";
+			var workBulletId = "workBullet" + positionNumber;
+//			bullet = bullet.replace("%id%", workBulletId);
+
 			var formattedTitle = HTMLworkTitle.replace("%data%", resume.work.jobs[job].positions[position].title);	
 			var formattedDates = HTMLworkDates.replace("%data%", resume.work.jobs[job].positions[position].dates);
 			if (resume.work.jobs[job].positions[position].department){
 				var formattedDept = HTMLworkDept.replace("%data%", resume.work.jobs[job].positions[position].department);
-				$(".work-entry:last").append(formattedDates + formattedTitle + formattedDept);
-			} else 	$(".work-entry:last").append(formattedDates + formattedTitle);			
+				HTMLposition = HTMLposition.replace("%data%", formattedDates + formattedTitle + formattedDept);
+			} else 	HTMLposition = HTMLposition.replace ("%data%", formattedDates + formattedTitle);			
+
+			$(".work-entry:last").append(HTMLposition);
+			
+			var arrow = "<image class='bullet' id='workBullet" + positionNumber + "' src='images/arrow.jpg'/>";
+//			$(".date-text:last").prepend("bullet - ");			
+			$(".date-text:last").prepend(arrow);			
+						
+			//format duties for each position:
 			var formattedDuties = HTMLworkDescription.replace("%data%", resume.work.jobs[job].positions[position].duties);
+			var dutiesID = "duties" + job + "." + position;
+			var formattedDuties = formattedDuties.replace("%id%", dutiesID);
 //			$(".work-entry:last").append(formattedDates + formattedTitle + formattedDuties);			
-			$(".work-entry:last").append(formattedDuties);			
+			$(".work-entry:last").append(formattedDuties);	
+			document.getElementById(dutiesID).style.display = 'none';		
+
 		}	
+	}
+}
+
+function showHide(id, bullet){
+	if(document.getElementById(id).style.display === 'none')
+	{
+		document.getElementById(id).style.display = 'block';
+		document.getElementById(bullet).src = "images/arrow-down.jpg";
+	}
+	else
+	{
+		document.getElementById(id).style.display = 'none';
+		document.getElementById(bullet).src = "images/arrow.jpg";
 	}
 }
 
