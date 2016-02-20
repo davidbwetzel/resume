@@ -1,16 +1,3 @@
-/*
-if(resume.bio.skills.length > 0)
-{
-	$("#header").prepend(HTMLskillsStart);
-
-	for (var i = 0; i < resume.bio.skills.length; i++)
-	{
-		var formattedSkill = HTMLskills.replace("%data%", resume.bio.skills[i]);
-		$("#skills").append(formattedSkill);
-	}
-	
-}
-*/
 function displayHeader()
 {
 	var formattedName = HTMLheaderName.replace("%data%", resume.bio.name);
@@ -117,6 +104,8 @@ function displayEducation()
 	}
 }
 
+/*
+// create function property of object "projects"
 function displayProjects()
 {
 	for (var proj in resume.projects.personal)
@@ -127,17 +116,30 @@ function displayProjects()
 		$(".project-entry:last").append(formattedProject);
 	}
 }
+*/
+function displayProjects()
+{
+	for (var proj in resume.projects.professional)
+	{
+		$("#projects").append(HTMLprojectStart);
+		var formattedProject = HTMLprojectTitle.replace("%data%", resume.projects.professional[proj].title);
+		
+		$(".project-entry:last").append(formattedProject);
+	}
+}
 
+//resume.bio.display();
 displayHeader();
+//resume.work.display();
 displayWork();
+//resume.education.display();
 displayEducation();
 //resume.projects.display();
 displayProjects();
 
 // add the map to the mapDiv id
-// $("#mapDiv").append(googleMap);
+ $("#mapDiv").append(googleMap);
 
-/*
 $(document).click(function(loc){
 	// find x,y click locations and log them to console
 	var x = loc.pageX;
@@ -145,7 +147,7 @@ $(document).click(function(loc){
 
 	logClicks(x,y);
 });
-*/
+
 /*
 function inName(name)
 {

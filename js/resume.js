@@ -23,7 +23,7 @@ var resume = {
 	},
 
 	"projects" : {
-		"personal" : 
+		"professional" : 
 		[
 			{
 				"title" : "Interactive Event Manager",
@@ -38,7 +38,7 @@ var resume = {
 				"current" : true
 			}
 		],
-		"Udacity" : 
+		"student" : 
 		[
 			{
 				"title" : "Web Portfolio",

@@ -112,12 +112,16 @@ function initializeMap() {
   var locations;
 
   var mapOptions = {
-    disableDefaultUI: true
+    disableDefaultUI: true,
+    zoom: 4,
+	center: {lat: 40.397, lng: -90.644}
+
   };
 
   // This next line makes `map` a new Google Map JavaScript Object and attaches it to
   // <div id="map">, which is appended as part of an exercise late in the course.
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -126,22 +130,22 @@ function initializeMap() {
   function locationFinder() {
 
     // initializes an empty array
+//  var locations = ["Chicago, IL", "Baltimore, MD", "Tucson, AZ"];
     var locations = [];
-/*
+
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
+    locations.push(resume.bio.contact.location);
 
     // iterates through school locations and appends each location to
     // the locations array
-    for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+    for (var school in resume.education.UNI) {
+      locations.push(resume.education.UNI[school].location);
     }
-*/
+
     // iterates through work locations and appends each location to
     // the locations array
-    for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
-      console.log("work location: " + work.jobs[job].location);
+    for (var job in resume.work.jobs) {
+      locations.push(resume.work.jobs[job].location);
     }
 
     return locations;
@@ -153,10 +157,10 @@ function initializeMap() {
   about a single location.
   */
   function createMapMarker(placeData) {
-
     // The next lines save location data from the search result object to local variables
-    var lat = placeData.geometry.location.k;  // latitude from the place service
-    var lon = placeData.geometry.location.D;  // longitude from the place service
+//    var lat = placeData.geometry.location.k;  // latitude from the place service
+    var lat = placeData.geometry.location.lat();  // latitude from the place service
+    var lon = placeData.geometry.location.lng();  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
 
@@ -186,6 +190,7 @@ function initializeMap() {
     map.fitBounds(bounds);
     // center the map
     map.setCenter(bounds.getCenter());
+
   }
 
   /*
@@ -194,8 +199,10 @@ function initializeMap() {
   */
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      createMapMarker(results[0]);
+    	createMapMarker(results[0]);
     }
+
+
   }
 
   /*
@@ -215,10 +222,10 @@ function initializeMap() {
       var request = {
         query: locations[place]
       };
-
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
       service.textSearch(request, callback);
+
     }
   }
 
@@ -234,9 +241,6 @@ function initializeMap() {
 
 }
 
-// Uncomment the code below when you're ready to implement a Google Map!
-/*
-
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
 
@@ -246,4 +250,3 @@ window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
   map.fitBounds(mapBounds);
 });
-*/
