@@ -8,7 +8,7 @@
   overflow: auto;
 }
 
-.education-entry, .work-entry, .project-entry {
+.education-entry, .work-entry, .project-entry, .map-entry {
   padding-left: 6%;
   padding-right: 5%;
 }
@@ -264,6 +264,7 @@ span {
   height: 100%;
   margin-left: 5%;
   margin-right: 5%;
+  clear: both;
 }
 
 #mapDiv {

@@ -40,7 +40,6 @@ var HTMLworkDescription = '<div class="duties-text" id="%id%">%data%</div>';
 //var HTMLshowHide = 'onclick = 
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-//var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectTitle = '<div class="employer-text">%data%</div>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
@@ -52,7 +51,7 @@ var HTMLschoolName = '<div class="employer-text">%data%</div>';
 var HTMLschoolDegree = '<div class="title-text"> - %data%</div>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<div class="duties-text">Major: %data%</div>';
+var HTMLschoolMajor = '<div class="duties-text" id="%id%">Major: %data%</div>';
 var HTMLschoolSubject = '<div class="duties-text">%data%</div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
@@ -62,8 +61,13 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
+var HTMLmapStart = '<div class="map-entry"></div>';
 var googleMap = '<div id="map"></div>';
 
+// for bullet points to show/hide descriptions
+var HTMLarrow = "<image class='bullet' id='%id%' src='images/arrow.jpg'/>";
+var downArrow = "images/arrow-down.jpg";
+var arrow = "images/arrow.jpg";
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
