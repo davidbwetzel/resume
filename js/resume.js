@@ -21,36 +21,54 @@ var resume = {
 			"audio production"
 			]
 	},
-
 	"projects" : {
-		"professional" : 
-		[
+		"current":[
 			{
-				"title" : "Interactive Event Manager",
-				"platform" : "Max/MSP",
-				"start" : 2007,
-				"current" : true
+				"category" : "Digital Music",
+				"works" : 
+				[
+					{
+						"title" : "Interactive Event Manager",
+						"platform" : "Max/MSP",
+						"dates" : "2007 - present",
+						"description" : "Script-driven modular environment for realization or fast prototyping of complex interactive electroacoustic systems for live performance. Originally intended for the creation of sustainable and accessible realizations of older concert works for live instruments with now-obsolete interactive electronics, IEM is also a viable platform for creating new user-friendly interactive electroacoustic works with minimal programming.",
+						"weblink" : "http://davidbrookewetzel.net/research/iem",
+						"images" : ["", ""]
+					},
+					{
+					"title" : "Resonance",
+					"platform" : "Web Audio (JavaScript)",
+					"dates" : 2015,
+					"description" : "An exploration of room resonances using ambient feedback controlled by a digital delay, <i>Resonance</i> was created as a sound installation for \"Unity Through the Arts and Sciences 2015\" at Mary Gage Peterson Elementary School in Chicago, IL. Sound in the space is fed into the delay line via strategically-placed microphones and played back into the room over loudspeakers. As the recorded sound re-circulates in the space, it is gradually filtered down to the natural resonant frequencies of the room. HTML5/canvas animations display the live audio frequency spectrum and tools for calculating potential resonances based on room size encourage scientific observation and experimentation of this phenomenon.",
+					"weblink" : "http://davidbrookewetzel.net/research",
+					"images" : ["", ""]
+					}
+				]
 			},
 			{
-				"title" : "Resonance",
-				"platform" : "Chrome Browser",
-				"start" : 2014,
-				"current" : true
+				"category" : "Web Development",
+				"works" : 
+				[
+				{
+					"title" : "Web Portfolio",
+					"platform" : "HTML/CSS",
+					"dates" : 2015,
+					"description" : "UDACITY Nanodegree project for demonstrating responsive web design through current HTML and CSS techniques.",
+					"weblink" : "",
+					"images" : ["", ""]
+				},
+				{
+					"title" : "Interactive Resume",
+					"platform" : "HTML/CSS/JS",
+					"dates" : 2016,
+					"description" : "UDACITY Nanodegree project demonstrating JavaScript techniques for manipulating an HTML/CSS template and managing data objects",
+					"weblink" : "",
+					"images" : ["", ""]
+				}
+				]
 			}
-		],
-		"student" : 
-		[
-			{
-				"title" : "Web Portfolio",
-				"start" : 2015
-			},
-			{
-				"title" : "Interactive Resume",
-				"start" : 2016
-			}
-		]
+	]
 	},
-
 	"work" : {
 		"gigs" :
 		[
@@ -284,8 +302,7 @@ var resume = {
 				"years" : 5.5
 			}
 		]
-	},
-		
+	},	
 	"education" : {
 		"CEU" : [
 			{

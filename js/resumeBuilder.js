@@ -59,15 +59,16 @@ resume.work.display = function()
 }
 
 function showHide(id, bullet){
+	//takes args for id of a text block to hide and id for an arrow to animate
 	if(document.getElementById(id).style.display === 'none')
 	{
 		document.getElementById(id).style.display = 'block';
-		document.getElementById(bullet).src = downArrow;
+		document.getElementById(bullet).src = downArrow; //global defined image file in helper.js
 	}
 	else
 	{
 		document.getElementById(id).style.display = 'none';
-		document.getElementById(bullet).src = arrow;
+		document.getElementById(bullet).src = arrow; //global defined image file in helper.js 
 	}
 }
 
@@ -142,12 +143,40 @@ resume.education.display = function()
 // create function property of object "projects"
 resume.projects.display = function ()
 {
-	for (var proj in resume.projects.professional)
-	{
+	//resume.projects is an array of project types which are arrays of individual projects
+	for (var category in resume.projects.current) // for each type of project, create a new project heading
+	{ 
 		$("#projects").append(HTMLprojectStart);
-		var formattedProject = HTMLprojectTitle.replace("%data%", resume.projects.professional[proj].title);
-		
-		$(".project-entry:last").append(formattedProject);
+		//each category is a heading formatted the same as employer or school
+		var formattedCategory = HTMLprojectCategory.replace("%data%", resume.projects.current[category].category);		
+		$(".project-entry:last").append(formattedCategory);
+
+		for (var proj in resume.projects.current[category].works)
+		{
+			console.log(resume.projects.current[category].works[proj].title);
+			//create a container div for each program in UNI with an onclick listener that displays/hides the major
+
+			//create a container div for each program in UNI with an onclick listener that displays/hides the major
+			var HTMLproject = "<div class='project' onclick='showHide(\"%elementID%\", \"%bulletID%\");'> %data% </div>";
+			var projectID = "project" + category + "." + proj; // create a unique identifier for each degree
+			var bulletID = "projBullet" + category + "." + proj; //create a unique ID for the bullet
+			//add a bullet for each project
+			var arrow = HTMLarrow.replace("%id%", bulletID);
+			var formattedDates = HTMLprojectDates.replace("%data%", arrow + resume.projects.current[category].works[proj].dates);
+			var formattedTitle = HTMLprojectTitle.replace("%data%", resume.projects.current[category].works[proj].title);	
+			var formattedProject = HTMLproject.replace("%elementID%", projectID); //set the ID for the major to show/hide 
+			formattedProject = formattedProject.replace("%bulletID%", bulletID); //set the bullet ID for the event handler
+			formattedProject = formattedProject.replace("%data%", formattedDates + formattedTitle); //add dates and title to container
+			$(".project-entry:last").append(formattedProject);			
+
+			//format details for each project:
+			var formattedDetails = HTMLprojectDescription.replace("%data%", resume.projects.current[category].works[proj].description);
+			formattedDetails = formattedDetails.replace("%id%", projectID);
+			$(".project-entry:last").append(formattedDetails);	//add major to the degree entry
+			document.getElementById(projectID).style.display = 'none'; // hide the major block		
+
+
+		}	
 	}
 }
 

@@ -40,9 +40,10 @@ var HTMLworkDescription = '<div class="duties-text" id="%id%">%data%</div>';
 //var HTMLshowHide = 'onclick = 
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<div class="employer-text">%data%</div>';
+var HTMLprojectCategory = '<div class="employer-text">%data%</div>';
+var HTMLprojectTitle = '<div class="title-text"> - %data%</div>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectDescription = '<div class="duties-text" id="%id%">%data%</div>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
