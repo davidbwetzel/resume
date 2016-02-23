@@ -52,7 +52,7 @@ var HTMLschoolDegree = '<div class="title-text"> - %data%</div>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<div class="duties-text" id="%id%">Major: %data%</div>';
-var HTMLschoolSubject = '<div class="duties-text">%data%</div>';
+var HTMLschoolSubject = '<div class="duties-text" id="%id%">%data%</div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
@@ -134,7 +134,6 @@ function initializeMap() {
   function locationFinder() {
 
     // initializes an empty array
-//  var locations = ["Chicago, IL", "Baltimore, MD", "Tucson, AZ"];
     var locations = [];
 
     // adds the single location property from bio to the locations array
@@ -163,6 +162,8 @@ function initializeMap() {
   function createMapMarker(placeData) {
     // The next lines save location data from the search result object to local variables
 //    var lat = placeData.geometry.location.k;  // latitude from the place service
+//    var lon = placeData.geometry.location.D;  // latitude from the place service
+// !!BUG in UDACITY code. search result lat/lng should should be accessed this way:
     var lat = placeData.geometry.location.lat();  // latitude from the place service
     var lon = placeData.geometry.location.lng();  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service

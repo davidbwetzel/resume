@@ -82,10 +82,27 @@ resume.education.display = function()
 		var formattedLocation = HTMLschoolLocation.replace("%data%", resume.education.CEU[program].location);
 		$(".education-entry:last").append(formattedSchool + formattedLocation);					
 
+		var programID = "program" + program; // create a unique identifier for each degree
+		var bulletID = "CEUbullet" + program; //create a unique ID for the bullet
+
 		var formattedDates = HTMLschoolDates.replace("%data%", resume.education.CEU[program].year);
 		var formattedDegree = HTMLschoolDegree.replace("%data%", resume.education.CEU[program].program);	
+		//create a container (.position) div for each program in CEU with an onclick listener that displays/hides the major		
+		var HTMLprogram = "<div class='position' onclick='showHide(\"%elementID%\", \"%bulletID%\");'> %data% </div>"; // move to helper.js
+		var formattedProgram = HTMLprogram.replace("%elementID%", programID); //set the ID for the program to show/hide 
+		formattedProgram = formattedProgram.replace("%bulletID%", bulletID); //set the bullet ID for animation
+		formattedProgram = formattedProgram.replace("%data%", formattedDates + formattedDegree); //add dates and degree to container
+		$(".education-entry:last").append(formattedProgram);			
+
+		//add a bullet for each degree
+		var arrow = HTMLarrow.replace("%id%", bulletID);
+		$(".date-text:last").prepend(arrow);
+
 		var formattedSubject = HTMLschoolSubject.replace("%data%", resume.education.CEU[program].subject);
-		$(".education-entry:last").append(formattedDates + formattedDegree + formattedSubject);			
+		formattedSubject = formattedSubject.replace("%id%", programID);
+		$(".education-entry:last").append(formattedSubject); // add the program subject	
+		document.getElementById(programID).style.display = 'none'; // but hide it		
+		
 	}
 
 //	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Degrees:");
@@ -98,39 +115,26 @@ resume.education.display = function()
 		var formattedLocation = HTMLschoolLocation.replace("%data%", resume.education.UNI[school].location);
 		$(".education-entry:last").append(formattedSchool + formattedLocation);
 
-/*		//TODO: add these to the degree container instead
-		var formattedDates = HTMLschoolDates.replace("%data%", resume.education.UNI[school].year);
-		var formattedDegree = HTMLschoolDegree.replace("%data%", resume.education.UNI[school].degree);	
-		$(".education-entry:last").append(formattedDates + formattedDegree);			
-		//add a bullet for each degree
-//		var arrow = HTMLarrow.replace("%id%", bulletID);
-		var arrow = HTMLarrow.replace("%id%", "degreeBullet" + school);
-		$(".date-text:last").prepend(arrow);
-*/
-
-		//create a container div for each degree with an onclick listener that displays/hides the major
-		var HTMLdegree = "<div class='position' onclick='showHide(\"%elementID%\", \"%bulletID%\");'> %data% </div>";
+		//create a container div for each program in UNI with an onclick listener that displays/hides the major
+		var HTMLprogram = "<div class='position' onclick='showHide(\"%elementID%\", \"%bulletID%\");'> %data% </div>";
 		var formattedDates = HTMLschoolDates.replace("%data%", resume.education.UNI[school].year);
 		var formattedDegree = HTMLschoolDegree.replace("%data%", resume.education.UNI[school].degree);	
 		var degreeID = "degree" + school; // create a unique identifier for each degree
 		var bulletID = "edBullet" + school; //create a unique ID for the bullet
-		HTMLdegree = HTMLdegree.replace("%elementID%", degreeID); //set the ID for the major to show/hide 
-		HTMLdegree = HTMLdegree.replace("%bulletID%", bulletID); //set the bullet ID for the event handler
-		HTMLdegree = HTMLdegree.replace("%data%", formattedDates + formattedDegree); //add dates and degree to container
+		var formattedProgram = HTMLprogram.replace("%elementID%", degreeID); //set the ID for the major to show/hide 
+		formattedProgram = formattedProgram.replace("%bulletID%", bulletID); //set the bullet ID for the event handler
+		formattedProgram = formattedProgram.replace("%data%", formattedDates + formattedDegree); //add dates and degree to container
+		$(".education-entry:last").append(formattedProgram);			
 
-		$(".education-entry:last").append(HTMLdegree);			
 		//add a bullet for each degree
 		var arrow = HTMLarrow.replace("%id%", bulletID);
-//		var arrow = HTMLarrow.replace("%id%", "degreeBullet" + school);
 		$(".date-text:last").prepend(arrow);
 
-		
-	
 		//format major for each degree:
 		var formattedMajor = HTMLschoolMajor.replace("%data%", resume.education.UNI[school].major);
-		var formattedDuties = formattedMajor.replace("%id%", degreeID);
-		$(".education-entry:last").append(formattedDuties);	
-		document.getElementById(degreeID).style.display = 'none';		
+		formattedMajor = formattedMajor.replace("%id%", degreeID);
+		$(".education-entry:last").append(formattedMajor);	//add major to the degree entry
+		document.getElementById(degreeID).style.display = 'none'; // hide the major block		
 
 	}
 }
