@@ -153,7 +153,7 @@ resume.projects.display = function ()
 
 		for (var proj in resume.projects.current[category].works)
 		{
-			console.log(resume.projects.current[category].works[proj].title);
+			//console.log(resume.projects.current[category].works[proj].title);
 			//create a container div for each program in UNI with an onclick listener that displays/hides the major
 
 			//create a container div for each program in UNI with an onclick listener that displays/hides the major
@@ -163,18 +163,29 @@ resume.projects.display = function ()
 			//add a bullet for each project
 			var arrow = HTMLarrow.replace("%id%", bulletID);
 			var formattedDates = HTMLprojectDates.replace("%data%", arrow + resume.projects.current[category].works[proj].dates);
-			var formattedTitle = HTMLprojectTitle.replace("%data%", resume.projects.current[category].works[proj].title);	
+			var formattedTitle = HTMLprojectTitle.replace("%data%", resume.projects.current[category].works[proj].title);
 			var formattedProject = HTMLproject.replace("%elementID%", projectID); //set the ID for the major to show/hide 
 			formattedProject = formattedProject.replace("%bulletID%", bulletID); //set the bullet ID for the event handler
 			formattedProject = formattedProject.replace("%data%", formattedDates + formattedTitle); //add dates and title to container
 			$(".project-entry:last").append(formattedProject);			
 
 			//format details for each project:
-			var formattedDetails = HTMLprojectDescription.replace("%data%", resume.projects.current[category].works[proj].description);
+			var projectDescription = "Description: " + resume.projects.current[category].works[proj].description;
+			var HTMLwebLink = "<a href='%href%' target='_blank'>%data%</a>";
+			var projectLink = HTMLwebLink.replace("%href%", resume.projects.current[category].works[proj].weblink);
+			var HTMLprojectImage = "<img src='%src%'>";
+			var projectImages = "";
+			for (img in resume.projects.current[category].works[proj].images)
+			{
+				projectImages += HTMLprojectImage.replace("%src%", resume.projects.current[category].works[proj].images[img]); 
+			}
+			projectLink = projectLink.replace("%data%", resume.projects.current[category].works[proj].weblink);
+			var projectPlatform = "Platform: " + resume.projects.current[category].works[proj].platform + "<br>";
+			var formattedDetails = HTMLprojectDescription.replace("%data%", projectPlatform + projectDescription + projectLink + projectImages);
 			formattedDetails = formattedDetails.replace("%id%", projectID);
 			$(".project-entry:last").append(formattedDetails);	//add major to the degree entry
 			document.getElementById(projectID).style.display = 'none'; // hide the major block		
-
+			//add weblink and images
 
 		}	
 	}
