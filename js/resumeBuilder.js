@@ -2,8 +2,22 @@ resume.bio.display = function()
 {
 	var formattedName = HTMLheaderName.replace("%data%", resume.bio.name);
 	$("#header").append(formattedName);
-	
-	if(resume.bio.skills.length > 0)
+
+/*
+var HTMLbioPic = '<img src="%data%" class="biopic">';
+var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
+
+*/
+// add bio pic
+	var formattedPic = HTMLbioPic.replace("%data%", resume.bio.bioPic);
+	$("#header").append(formattedPic);
+
+// add welcome message
+	var formattedMsg = HTMLWelcomeMsg.replace("%data%", resume.bio.welcome);
+	$("#header").append(formattedMsg);
+
+
+	if(resume.bio.skills.length) // > 0
 	{
 		$("#header").append(HTMLskillsStart);
 		for (var skill in resume.bio.skills)
@@ -12,6 +26,20 @@ resume.bio.display = function()
 			$("#skills").append(formattedSkill);
 		}	
 	}
+
+//  add contact info to footer
+//	privacy, please. uncomment to see it appear, but don't display this on a public web site
+//	var formattedMobile = HTMLmobile.replace("%data%", resume.bio.contact.mobile);
+//	$("#footerContacts").append(formattedMobile);
+	var formattedEmail = HTMLemail.replace("%data%", resume.bio.contact.email);
+	$("#footerContacts").append(formattedEmail);
+	var formattedWeb = HTMLweb.replace("%data%", resume.bio.contact.web);
+	$("#footerContacts").append(formattedWeb);
+	var formattedGithub = HTMLgithub.replace("%data%", resume.bio.contact.github);
+	$("#footerContacts").append(formattedGithub);
+	var formattedLocation = HTMLlocation.replace("%data%", resume.bio.contact.location);
+	$("#footerContacts").append(formattedLocation);
+		
 }
 
 resume.work.display = function()

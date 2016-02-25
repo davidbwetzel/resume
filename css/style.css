@@ -15,7 +15,7 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #7777aa;
   line-height: 48px;
   display: inline;
 }
@@ -157,14 +157,15 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 14px;
   color: #F3F3F3;
-  line-height: 28px;
+  line-height: 18px;
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #7777aa;
   display: none;
+  margin-left: -20px;
 }
 
 .orange {
@@ -174,6 +175,12 @@ a {
 .orange-text {
   color: #F5AE23;
 }
+
+.blue-text {
+  color: #7777aa;
+  font-weight: bold;
+}
+
 
 .white-text {
   font-weight: bold;
@@ -186,14 +193,16 @@ a {
   clear:both;
 }
 
+ /* background-color: #4A4A4A;*/
+
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #444444;
   clear: both;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #444444;
 }
 
 .flex-box {
@@ -217,7 +226,7 @@ ul {
 }
 
 .biopic {
-  float: left;
+  float: right;
   padding: 10px;
   width: 200px;
   display: none;
@@ -245,11 +254,27 @@ span {
 
 #letsConnect {
   text-align: center;
+  margin-top: 5%;
+
 }
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+#map {
+  display: block;
+  height: 95%;
+  margin-left: 5%;
+  margin-right: 5%;
+  clear: both;
+}
+
 
 @media only screen and (max-width: 1024px) {
   #letsConnect {
-    margin-top: 5%;
+    margin-top: 2%;
   }
 }
 
@@ -261,7 +286,7 @@ span {
 
 @media only screen and (max-width: 750px) {
   #letsConnect {
-    margin-top: 10%;
+    margin-top: 5px;
   }
   .biopic {
     width: 150px;
@@ -269,20 +294,23 @@ span {
   .welcome-message {
     display: none;
   }
+  h1 {
+  font-size: 30px;
+  line-height: 38px;
+  }
+  #map {
+  	height: 90%;
+  }
+
 }
 
-#map {
-  display: block;
-  height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
-  clear: both;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+@media only screen and (max-width: 500px) {
+  #mapDiv {
+    height: 300px;
+  }
+  #map {
+  	height: 85%;
+  }
 }
 
 @media only screen and (min-width: 750px) {

@@ -10,8 +10,8 @@ var resume = {
 					"web" : "davidbrookewetzel.net",
 					"location" : "Chicago, IL"
 					},
-		"bioPic" : "http://davidbrookewetzel.net/wp-content/uploads/2014/09/dbwetzel-1.jpg",
-		"welcome" : "Howdy",
+		"bioPic" : "images/DBW-sm.jpg",
+		"welcome" : "Hello! I am a classically trained musician, music technologist, and educator seeking opportunities in higher education, interactive software design, and community education in STEAM topics",
 		"skills" :
 			[
 			"performance", 
@@ -279,7 +279,7 @@ var resume = {
 					{
 						"department" : "office of technology transfer",
 						"title" : "technical team member",
-						"duties" : "contributed interactive systems design and programming, logistical planning, and event coordination to live performances at 'Times Square 2000' New Year's Eve celebrations in New York City",
+						"duties" : "contributed interactive systems design and programming, logistical planning, and event coordination for live performances at 'Times Square 2000' New Year's Eve celebrations in New York City",
 						"dates" : "1999 - 2000"
 					},
 					{
