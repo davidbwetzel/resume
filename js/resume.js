@@ -21,30 +21,6 @@ var resume = {
 			"audio production"
 			]
 	},
-	"skills" :{
-		"skills" : [
-			{
-				"title" : "performance",
-				"description" : ""
-			},
-			{
-				"title" : "teaching",
-				"description" : ""
-			},
-			{
-				"title" : "web development",
-				"description" : ""
-			},
-			{
-				"title" : "audio production",
-				"description" : ""
-			},
-			{
-				"title" : "programming",
-				"description" : ""
-			}
-		]
-	},
 
 	"projects" : {
 		"current":[
@@ -411,28 +387,6 @@ var resume = {
 			}
 		], 
 		
-		"K12" : 
-		[
-			{
-				"name" : "Lane Technical High School",
-				"institution" : "Chicago Public Schools",
-				"degree" : "Diploma",
-				"level" : "secondary",
-				"year" : "1987",
-				"attended" : "1983 - 1987",
-				"location" : "Chicago, IL",
-				"major" : "Math & Science"
-			},
-			{
-				"name" : "Saint Philip Lutheran School",
-				"institution" : "Missouri Synod",
-				"degree" : "Diploma",
-				"level" : "primary (k-8)",
-				"year" : "1983",
-				"attended" : "1976 - 1983",
-				"location" : "Chicago, IL"
-			}
-		]
 	}
 }
 ;
