@@ -102,8 +102,8 @@ function showHide(id, bullet){
 
 resume.education.display = function()
 {
-//	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Continuing education: ");
-//	$("#education").append(formattedEdLevel);
+	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Continuing education: ");
+	$("#education").append(formattedEdLevel);
 	for (var program in resume.education.CEU) //cycle through each Continuing Ed program
 	{
 		$("#education").append(HTMLschoolStart); //'<div class="education-entry"></div>'
@@ -134,8 +134,8 @@ resume.education.display = function()
 		
 	}
 
-//	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Degrees:");
-//	$("#education").append(formattedEdLevel);	
+	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Degrees:");
+	$("#education").append(formattedEdLevel);	
 	for (var school in resume.education.UNI) //cycle through each University listed
 	{
 

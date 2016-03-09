@@ -120,7 +120,7 @@ function initializeMap() {
 
   var mapOptions = {
     disableDefaultUI: true,
-    zoom: 4,
+    maxZoom: 10,
 	center: {lat: 40.397, lng: -90.644}
 
   };
@@ -189,12 +189,14 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+//      Data.Feature(options?:Data.FeatureOptions)
+//		map.setProperty("zoom", 10);
     });
 
     // this is where the pin actually gets added to the map.
     // bounds.extend() takes in a map location object
     bounds.extend(new google.maps.LatLng(lat, lon));
-    // fit the map to the new marker
+    // fit the map to the new marker    
     map.fitBounds(bounds);
     // center the map
     map.setCenter(bounds.getCenter());

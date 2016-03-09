@@ -11,7 +11,7 @@ var resume = {
 					"location" : "Chicago, IL"
 					},
 		"bioPic" : "images/DBW-sm.jpg",
-		"welcome" : "Hello! I am a classically trained musician, music technologist, and educator seeking opportunities in higher education, interactive software design, and community education in STEAM topics",
+		"welcome" : "Hello! I am a classically trained musician, music technologist, and educator seeking opportunities in higher education, interactive software design, web development, audio production, and community education in STEAM topics",
 		"skills" :
 			[
 			"performance", 
@@ -21,6 +21,31 @@ var resume = {
 			"audio production"
 			]
 	},
+	"skills" :{
+		"skills" : [
+			{
+				"title" : "performance",
+				"description" : ""
+			},
+			{
+				"title" : "teaching",
+				"description" : ""
+			},
+			{
+				"title" : "web development",
+				"description" : ""
+			},
+			{
+				"title" : "audio production",
+				"description" : ""
+			},
+			{
+				"title" : "programming",
+				"description" : ""
+			}
+		]
+	},
+
 	"projects" : {
 		"current":[
 			{
