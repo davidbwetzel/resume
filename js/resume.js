@@ -385,8 +385,7 @@ var resume = {
 					"William F. Chaney (history)"
 				]
 			}
-		], 
-		
+		], 		
 	}
 }
 ;

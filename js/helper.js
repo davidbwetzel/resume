@@ -55,6 +55,7 @@ var HTMLschoolDegree = '<div class="title-text"> - %data%</div>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<div class="duties-text" id="%id%">Major: %data%</div>';
+var HTMLschoolThesis = '<div class="duties-text" id="%id%">Thesis: %data%</div>';
 var HTMLschoolSubject = '<div class="duties-text" id="%id%">%data%</div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';

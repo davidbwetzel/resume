@@ -40,7 +40,7 @@ var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
 	var formattedLocation = HTMLlocation.replace("%data%", resume.bio.contact.location);
 	$("#footerContacts").append(formattedLocation);
 		
-}
+};
 
 resume.work.display = function()
 {
@@ -78,95 +78,95 @@ resume.work.display = function()
 			//format (but hide) duties for each position:
 			var formattedDuties = HTMLworkDescription.replace("%data%", resume.work.jobs[job].positions[position].duties);
 			var dutiesID = "duties" + job + "." + position;
-			var formattedDuties = formattedDuties.replace("%id%", dutiesID);
+			formattedDuties = formattedDuties.replace("%id%", dutiesID);
 			$(".work-entry:last").append(formattedDuties);	
 			document.getElementById(dutiesID).style.display = 'none';		
 
 		}	
 	}
-}
-
-function showHide(id, bullet){
-	//takes args for id of a text block to hide and id for an arrow to animate
-	if(document.getElementById(id).style.display === 'none')
-	{
-		document.getElementById(id).style.display = 'block';
-		document.getElementById(bullet).src = downArrow; //global defined image file in helper.js
-	}
-	else
-	{
-		document.getElementById(id).style.display = 'none';
-		document.getElementById(bullet).src = arrow; //global defined image file in helper.js 
-	}
-}
+};
 
 resume.education.display = function()
 {
+	//declare variables here to avoid scope issues in the for loops ...
+	var formattedSchool = ""; //HTML string from helper.js + data from resume object from resume.js
+	var formattedLocation = ""; //HTML string from helper.js + data from resume object from resume.js
+	var programID = ""; //keep track of education programs for interactivity purposes
+	var bulletID = ""; //keep track of bullets for interactivity purposes
+	var formattedDates = ""; //HTML string from helper.js + data from resume object from resume.js
+	var formattedDegree = ""; //HTML string from helper.js + data from resume object from resume.js
+	var HTMLprogram = ""; //HTML string from helper.js + data from resume object from resume.js
+	var formattedProgram = ""; //HTML string from helper.js + data from resume object from resume.js
+	var arrow = ""; //HTML "arrow" string from helper.js + id for item
+	var formattedSubject = ""; //HTML string from helper.js + data from resume object from resume.js
+	var degreeID = ""; //keep track of bullets for interactivity purposes
+	var formattedMajor = ""; //HTML string from helper.js + data from resume object from resume.js
+
 	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Continuing education: ");
 	$("#education").append(formattedEdLevel);
 	for (var program in resume.education.CEU) //cycle through each Continuing Ed program
 	{
 		$("#education").append(HTMLschoolStart); //'<div class="education-entry"></div>'
-		var formattedSchool = HTMLschoolName.replace("%data%", resume.education.CEU[program].name);
-		var formattedLocation = HTMLschoolLocation.replace("%data%", resume.education.CEU[program].location);
+		formattedSchool = HTMLschoolName.replace("%data%", resume.education.CEU[program].name);
+		formattedLocation = HTMLschoolLocation.replace("%data%", resume.education.CEU[program].location);
 		$(".education-entry:last").append(formattedSchool + formattedLocation);					
 
-		var programID = "program" + program; // create a unique identifier for each degree
-		var bulletID = "CEUbullet" + program; //create a unique ID for the bullet
+		programID = "program" + program; // create a unique identifier for each degree
+		bulletID = "CEUbullet" + program; //create a unique ID for the bullet
 
-		var formattedDates = HTMLschoolDates.replace("%data%", resume.education.CEU[program].year);
-		var formattedDegree = HTMLschoolDegree.replace("%data%", resume.education.CEU[program].program);	
+		formattedDates = HTMLschoolDates.replace("%data%", resume.education.CEU[program].year);
+		formattedDegree = HTMLschoolDegree.replace("%data%", resume.education.CEU[program].program);	
 		//create a container (.position) div for each program in CEU with an onclick listener that displays/hides the major		
-		var HTMLprogram = "<div class='position' onclick='showHide(\"%elementID%\", \"%bulletID%\");'> %data% </div>"; // move to helper.js
-		var formattedProgram = HTMLprogram.replace("%elementID%", programID); //set the ID for the program to show/hide 
+		HTMLprogram = "<div class='position' onclick='showHide(\"%elementID%\", \"%bulletID%\");'> %data% </div>"; // move to helper.js
+		formattedProgram = HTMLprogram.replace("%elementID%", programID); //set the ID for the program to show/hide 
 		formattedProgram = formattedProgram.replace("%bulletID%", bulletID); //set the bullet ID for animation
 		formattedProgram = formattedProgram.replace("%data%", formattedDates + formattedDegree); //add dates and degree to container
 		$(".education-entry:last").append(formattedProgram);			
 
 		//add a bullet for each degree
-		var arrow = HTMLarrow.replace("%id%", bulletID);
+		arrow = HTMLarrow.replace("%id%", bulletID);
 		$(".date-text:last").prepend(arrow);
 
-		var formattedSubject = HTMLschoolSubject.replace("%data%", resume.education.CEU[program].subject);
+		formattedSubject = HTMLschoolSubject.replace("%data%", resume.education.CEU[program].subject);
 		formattedSubject = formattedSubject.replace("%id%", programID);
 		$(".education-entry:last").append(formattedSubject); // add the program subject	
 		document.getElementById(programID).style.display = 'none'; // but hide it		
 		
 	}
 
-	var formattedEdLevel = HTMLedLevelStart.replace("%data%", "Degrees:");
+	formattedEdLevel = HTMLedLevelStart.replace("%data%", "Degrees:");
 	$("#education").append(formattedEdLevel);	
 	for (var school in resume.education.UNI) //cycle through each University listed
 	{
 
 		$("#education").append(HTMLschoolStart);
-		var formattedSchool = HTMLschoolName.replace("%data%", resume.education.UNI[school].name + ", " + resume.education.UNI[school].institution);
-		var formattedLocation = HTMLschoolLocation.replace("%data%", resume.education.UNI[school].location);
+		formattedSchool = HTMLschoolName.replace("%data%", resume.education.UNI[school].name + ", " + resume.education.UNI[school].institution);
+		formattedLocation = HTMLschoolLocation.replace("%data%", resume.education.UNI[school].location);
 		$(".education-entry:last").append(formattedSchool + formattedLocation);
 
 		//create a container div for each program in UNI with an onclick listener that displays/hides the major
-		var HTMLprogram = "<div class='position' onclick='showHide(\"%elementID%\", \"%bulletID%\");'> %data% </div>";
-		var formattedDates = HTMLschoolDates.replace("%data%", resume.education.UNI[school].year);
-		var formattedDegree = HTMLschoolDegree.replace("%data%", resume.education.UNI[school].degree);	
-		var degreeID = "degree" + school; // create a unique identifier for each degree
-		var bulletID = "edBullet" + school; //create a unique ID for the bullet
-		var formattedProgram = HTMLprogram.replace("%elementID%", degreeID); //set the ID for the major to show/hide 
+		HTMLprogram = "<div class='position' onclick='showHide(\"%elementID%\", \"%bulletID%\");'> %data% </div>";
+		formattedDates = HTMLschoolDates.replace("%data%", resume.education.UNI[school].year);
+		formattedDegree = HTMLschoolDegree.replace("%data%", resume.education.UNI[school].degree);	
+		degreeID = "degree" + school; // create a unique identifier for each degree
+		bulletID = "edBullet" + school; //create a unique ID for the bullet
+		formattedProgram = HTMLprogram.replace("%elementID%", degreeID); //set the ID for the major to show/hide 
 		formattedProgram = formattedProgram.replace("%bulletID%", bulletID); //set the bullet ID for the event handler
 		formattedProgram = formattedProgram.replace("%data%", formattedDates + formattedDegree); //add dates and degree to container
 		$(".education-entry:last").append(formattedProgram);			
 
 		//add a bullet for each degree
-		var arrow = HTMLarrow.replace("%id%", bulletID);
+		arrow = HTMLarrow.replace("%id%", bulletID);
 		$(".date-text:last").prepend(arrow);
 
 		//format major for each degree:
-		var formattedMajor = HTMLschoolMajor.replace("%data%", resume.education.UNI[school].major);
+		formattedMajor = HTMLschoolMajor.replace("%data%", resume.education.UNI[school].major);
 		formattedMajor = formattedMajor.replace("%id%", degreeID);
 		$(".education-entry:last").append(formattedMajor);	//add major to the degree entry
 		document.getElementById(degreeID).style.display = 'none'; // hide the major block		
 
 	}
-}
+};
 
 // create function property of object "projects"
 resume.projects.display = function ()
@@ -203,7 +203,7 @@ resume.projects.display = function ()
 			var projectLink = HTMLwebLink.replace("%href%", resume.projects.current[category].works[proj].weblink);
 			var HTMLprojectImage = "<img src='%src%'>";
 			var projectImages = "";
-			for (img in resume.projects.current[category].works[proj].images)
+			for (var img in resume.projects.current[category].works[proj].images)
 			{
 				projectImages += HTMLprojectImage.replace("%src%", resume.projects.current[category].works[proj].images[img]); 
 			}
@@ -216,6 +216,20 @@ resume.projects.display = function ()
 			//add weblink and images
 
 		}	
+	}
+};
+
+function showHide(id, bullet){
+	//takes args for id of a text block to hide and id for an arrow to animate
+	if(document.getElementById(id).style.display === 'none')
+	{
+		document.getElementById(id).style.display = 'block';
+		document.getElementById(bullet).src = downArrow; //global defined image file in helper.js
+	}
+	else
+	{
+		document.getElementById(id).style.display = 'none';
+		document.getElementById(bullet).src = arrow; //global defined image file in helper.js 
 	}
 }
 
